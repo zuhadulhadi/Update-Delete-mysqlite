@@ -45,5 +45,21 @@ public class UpdateCourseActivity extends AppCompatActivity {
 
 
         // adding on click listener to our update course button.
+        updateCourseBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                // inside this method we are calling an update course
+                // method and passing all our edit text values.
+                dbHandler.updateCourse(NameEdt.getText().toString(), Integer.parseInt(RollEdt.getText().toString()));
+
+                // displaying a toast message that our course has been updated.
+                Toast.makeText(UpdateCourseActivity.this, "Course Updated..", Toast.LENGTH_SHORT).show();
+
+                // launching our main activity.
+                Intent i = new Intent(UpdateCourseActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+    }
 }
