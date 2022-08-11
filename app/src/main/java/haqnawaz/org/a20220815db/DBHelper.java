@@ -84,6 +84,18 @@ public class DBHelper extends SQLiteOpenHelper {
         cursorCourses.close();
         return studentArrayList;
     }
+    public void updateCourse(String Name, int RollNo) {
 
+        // calling a method to get writable database.
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(STUDENT_NAME, Name);
+        cv.put(STUDENT_ROLL, RollNo);
+        // on below line we are calling a update method to update our database and passing our values.
+        // and we are comparing it with name of our course which is stored in original name variable.
+        db.update(STUDENT_TABLE, cv, "name=?", null);
+        db.close();
+    }
 
 }

@@ -71,9 +71,9 @@ public class MainActivity extends AppCompatActivity {
                 DBHelper dbHelper = new DBHelper(MainActivity.this);
                 Editable id = delID.getText();
                 if(dbHelper.delStudent(id))
-                    Toast.makeText(MainActivity.this,"Record deleted",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Record deleted sucessfully",Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(MainActivity.this,"ID not found",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Error Id not found",Toast.LENGTH_SHORT).show();
             }
         });
         listViewStudent.setOnItemClickListener(new AdapterView.OnItemClickListener() {
